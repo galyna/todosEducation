@@ -2,7 +2,7 @@ module.exports = function (app, database) {
     let ObjectID = require("mongodb").ObjectID;
     const notesURL = "/notes";
     const collection = database.collection("notes");
-    app.get(notesURL + `:id`, (req, res) => {
+    app.get(notesURL + `/:id`, (req, res) => {
         const id = req.params.id;
         const details = {"_id": new ObjectID(id)};
         collection.findOne(details, (err, item) => {
@@ -32,7 +32,7 @@ module.exports = function (app, database) {
             }
         });
     });
-    app.put(notesURL + `:id`, (req, res) => {
+    app.put(notesURL + `/:id`, (req, res) => {
         const id = req.params.id;
         const details = {"_id": new ObjectID(id)};
         const note = {text: req.body.body, title: req.body.title};
@@ -44,7 +44,7 @@ module.exports = function (app, database) {
             }
         });
     });
-    app.delete(notesURL + `:id`, (req, res) => {
+    app.delete(notesURL + `/:id`, (req, res) => {
         const id = req.params.id;
         const details = {"_id": new ObjectID(id)};
         collection.removeOne(details, (err, item) => {
