@@ -1,0 +1,12 @@
+- to github repo
+
+- es6 https://kangax.github.io/compat-table/es6/
+    - const, let instead var
+    - cb -> promise -> async/await
+    - list es6 features and understand it
+
+- eslint (https://github.com/standard/eslint-config-standard)
+- add integration tests - mocha, chai(expect) - ask Ostap for test sample
+- prepare app for microservice architecture and infrastructure
+    - https://12factor.net/ru/
+    - integrate with CI/CD - https://travis-ci.org/
