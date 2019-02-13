@@ -8,11 +8,14 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+
+// const client = await MongoClient.connect...
+// })()
 MongoClient.connect(db.url, (err, database) => {
     if (err) {
         return console.log(err);
     }
-    require("./routes")(app, database);
+    require(".")(app, database);
 });
 
 module.exports = app;
