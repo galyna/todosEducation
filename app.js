@@ -17,11 +17,10 @@ app.use(express.urlencoded({extended: true}));
         // Use connect method to connect to the Server
         client = await new MongoClient(db.url, { useNewUrlParser: true });
         client.connect(function(err, client){
-
             if(err){
                 return console.log(err);
             }
-            // взаимодействие с базой данных
+
             require("./notes")(app, client);
 
         });
