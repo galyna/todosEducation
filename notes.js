@@ -1,7 +1,7 @@
-module.exports = function (app, database) {
+module.exports = function (app, client) {
     const ObjectID = require("mongodb").ObjectID;
     const notesURL = "/notes";
-    const collection = database.collection("notes");
+    const collection = client.db("notes").collection("notes");
 
     const asyncMiddleware = fn =>
         (req, res, next) => {
